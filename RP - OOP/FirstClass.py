@@ -1,19 +1,40 @@
 # pylint: disable=consider-using-f-string
 class Dog:
     species = "mammal"
-    
+
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
+    def description(self):
+        return "{} is {} years old".format(self.name, self.age)
 
-philo = Dog("Philo", 5)
-mikey = Dog("Mikey", 6)
+    def speak(self, sound):
+        return "{} says {}".format(self.name, sound)
 
-mikey.age = 7
-philo.species = "mouse"
+    def birthday(self):
+        self.age += 1
 
-print("{} is {} and {} is {}".format(philo.name, philo.age, mikey.name, mikey.age))
 
-if philo.species == "mammal":
-    print("{} is a {}".format(philo.name, philo.species))
+mikey = Dog('Mikey', 6)
+
+print(mikey.description())
+
+print(mikey.speak("blablabla"))
+
+mikey.birthday()
+
+print(mikey.description())
+
+
+# philo = Dog("Philo", 5)
+# mikey = Dog("Mikey", 6)
+
+# mikey.age = 7
+# philo.species = "mouse"
+
+# print("{} is {} and {} is {}".format(
+#     philo.name, philo.age, mikey.name, mikey.age))
+
+# if philo.species == "mammal":
+#     print("{} is a {}".format(philo.name, philo.species))
